@@ -29,8 +29,6 @@ public class Theremin extends JFrame {
       try {
     	  
     	  
-//    	  InputStream is = Class.class.getResourceAsStream("/bow11111.wav");
-//    	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(is);
     	  
     	  URL url = Class.class.getResource("/BowFidl01-E.wav");
     	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
@@ -42,18 +40,15 @@ public class Theremin extends JFrame {
          
          
          
-   	  URL kick1Url = Class.class.getResource("/Kick&Snr01.wav");
-   	  AudioInputStream kick1 = AudioSystem.getAudioInputStream(kick1Url);
+         
+    	  URL kick1Url = Class.class.getResource("/KickSnr01.wav");
+    	  AudioInputStream kick1 = AudioSystem.getAudioInputStream(kick1Url);
    	  
         Clip clipDrum1 = AudioSystem.getClip();
         clipDrum1.open(kick1);
         clipDrum1.start();
          
-          if ( clipFid1.isRunning() ) {
-        	  
-        	  clipFid1.start();
-          }
-         
+
          
          
       } catch (UnsupportedAudioFileException e) {

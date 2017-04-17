@@ -1,0 +1,89 @@
+
+
+
+TrackMoodStatus
+	Name : int
+		#starting, pre, medium, solo, high, end
+
+
+
+
+TrackActionType
+	start, pre, otherclipsametype, othercliphigh, otherclipmedium, 
+	
+
+SetActionType
+	Start, solo, end
+
+
+
+Analyzer
+	TrackActionPossible
+	SetActionPossible
+	TrackActionType
+	SetActionType
+	priority	int
+	
+
+
+chord
+	Name		String
+	Key		Char
+	Variant		[maj,min]
+
+
+clip
+	soundfile	String		
+	length		int (milisec)
+	speed (bpm)	int
+	ascend/descend	int (<127 descend)
+	chord		
+	genre
+
+
+ControlStream
+	every 10ms?
+	data 		ControlData[1000]
+	streamName 	String	
+	streamRole	?
+	streamEnabled	Bool
+
+ControlData
+	controlValue	Int
+	time		Time
+
+
+ClipTrackSet
+	Clip[]
+
+
+Track
+	ControlStream
+	clipTrackSet	ClipTrackSet		
+	TrackMoodStatus	
+	NextControlTime	Time   #amikor meg lehet clip-et valasztani
+	TransientPeriodEnds	Time #ami utan ujabb analizis johet majd
+	Analyzers[]
+
+Tracks
+	Track[1:4]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -116,11 +116,6 @@ public class ThereminApp  extends JFrame{
 	
 	public ChartPanel diagramTest(Dataset dataset) {
 		
-		Analyzer analyzerUnitTest = new Analyzer();
-		
-		ArrayList<Integer> data = new ArrayList<Integer>();
-		
-		analyzerUnitTest.generateSlowMovementData(data);
 		
 		
 		//ChartFactory();
@@ -146,7 +141,7 @@ public class ThereminApp  extends JFrame{
 	    
 		
 		
-		JFreeChart chart = ChartFactory.createLineChart("1st chan", "cat axis label", "value", (CategoryDataset) dataset, PlotOrientation.HORIZONTAL, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE);
+		JFreeChart chart = ChartFactory.createLineChart("1st chan", "Value axis label", "value", (CategoryDataset) dataset, PlotOrientation.VERTICAL, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE);
 		
 		ChartPanel chartPanel = new ChartPanel(chart);
 		chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
@@ -168,22 +163,34 @@ public class ThereminApp  extends JFrame{
 
 	public Dataset createFakeDataset() {
 	
+		
+		Analyzer analyzerUnitTest = new Analyzer();
+		
+		ArrayList<Integer> data = new ArrayList<Integer>();
+		
+		analyzerUnitTest.generateSlowMovementData(data);
+		
+		
+		
+		
 	DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-    String series1 = "A left";
-    String series2 = "A right";
-    String series3 = "B left";
-    String series4 = "B right";		
+    String DiaNameAleft = "A left";
+    String DiaNameAright = "A right";
+    String DiaNameBleft = "B left";
+    String DiaNameBright = "B right";		
 	
-    dataset.addValue(5.0, series1, "2005");
-    dataset.addValue(4.8, series1, "2006");
-    dataset.addValue(4.5, series1, "2007");
-    dataset.addValue(4.3, series1, "2008");
-    dataset.addValue(4.0, series1, "2009");
-    dataset.addValue(4.1, series1, "2010");
-    dataset.addValue(4.2, series1, "2011");
-    dataset.addValue(4.2, series1, "2012");
-    dataset.addValue(4.0, series1, "2013");
-	
+    
+    
+    Integer time = 0;   
+    int index = 0 ;
+	    while (data.size()> index) {
+	    	int value = 0;
+	    	value=data.get(index);
+	        //System.out.println(value);
+	        dataset.addValue(value, "1", Integer.toString(time) ); 
+	        time++;
+	        index++ ;
+	    }
     
     return dataset;
 	}
@@ -192,20 +199,14 @@ public class ThereminApp  extends JFrame{
 	
 	public static void main(String[] args) {
 		ThereminApp ta = new ThereminApp();
-		
-		
-		
+				
 		JPanel chartPanel = ta.diagramTest(ta.createFakeDataset());
-        
-		
-		
-//		add(chartPanel, BorderLayout.CENTER);
-//        setSize(640, 480);
-//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        setLocationRelativeTo(null);
+    
+		ta.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ta.setLocationRelativeTo(null);
+		ta.setSize(640,  480);
 		ta.setVisible(true);
-//		
-		
+
 
 	}
 	

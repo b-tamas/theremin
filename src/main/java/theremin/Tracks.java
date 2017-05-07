@@ -3,7 +3,7 @@ package theremin;
 public class Tracks extends Object{
 	
 	
-	public Track[] track = new Track[4];
+	public Track[] track = new Track[5];
 	
 	
 	
@@ -13,6 +13,7 @@ public class Tracks extends Object{
 		this.track[2] =  new Track();
 		this.track[3] =  new Track();
 		this.track[4] =  new Track();
+		
 		
 	}
 

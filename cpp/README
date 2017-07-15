@@ -1,0 +1,19 @@
+
+  276  sudo apt-cache search rtmidi
+  277  sudo apt-get install librtmidi-dev
+  279  sudo apt-get install librtmidi-dbg
+  280  sudo apt-get install librtmidi-dev
+  292  sudo mcedit /etc/apt/sources.list   #enable src
+  293  sudo apt-get update
+  294  sudo apt-get source librtmidi-dev
+  296  sudo apt-cache search rtmidi
+  297  sudo apt-get source librtmidi-dbg
+  298  sudo apt-get source librtmidi-dev
+  299  sudo apt-get source librtmidi2
+  302  g++ -Wall -D__LINUX_ALSA__ -o midiprobe midiout.cpp RtMidi.cpp -lasound -lpthread
+  305  alsamixer 
+  306  g++ -Wall -D__LINUX_ALSA__ -o midiprobe midiout.cpp RtMidi.cpp -lasound -lpthread
+  310  g++ -Wall -D__LINUX_ALSA__ -o midiprobe midiprobe.cpp RtMidi.cpp -lasound -lpthread
+  312  g++ -Wall -D__LINUX_ALSA__ -o midiout midiout.cpp RtMidi.cpp -lasound -lpthread
+  314  g++ -Wall -D__LINUX_ALSA__ -o midiout midiout.cpp RtMidi.cpp -lasound -lpthread
+  322  git clone https://yazden@yazden1.git.cloudforge.com/theremin.git

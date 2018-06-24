@@ -1,4 +1,4 @@
-# Project Title
+# Theremin-like digital audio instrument
 
 Digital theremin-like instrument using ultrasonic distance sensors and music loops
 
@@ -60,7 +60,7 @@ TBD
 
 ## License
 
-TBD
+Components from https://github.com/thestk/rtaudio
 
 ## Acknowledgments
 
